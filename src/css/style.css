@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  background-color: #eaeaea;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  z-index: 9999;
+}
+
+nav ul li {
+  transition: .5s ease;
+}
+
+nav ul li:hover {
+  font-weight: 500;
+  font-size: 1.01rem;
+}
+
+#intro {
+  height: 95vh;
+}
+
+.left {
+  width: 100%;
+}
+
+.right {
+  background-image: url('../../assets/img/ico_koleksi.png');
+  width: 80%;
+  height: 80%;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 80px 150px;
+  animation: animback 2s ease-in-out infinite;
+}
+
+/* width */
+#table-cov::-webkit-scrollbar {
+  height: 4px;
+}
+
+/* Track */
+#table-cov::-webkit-scrollbar-track {
+  background: #bbbbbb;
+}
+
+/* Handle */
+#table-cov::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+}
+
+/* Handle on hover */
+#table-cov::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.icon-cov {
+  height: 50px;
+  width: 50px;
+  color: #fff6f6;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  position: relative;
+  top: -40px;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  /* Light grey */
+  border-top: 10px solid #ffd254;
+  /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  margin-top: 50px;
+}
+
+footer {
+  flex-wrap: wrap-reverse;
+  margin-top: 250px;
+  padding: 50px;
+  margin-bottom: -30px
+}
+
+footer h3 {
+  order: 1;
+}
+
+
+.circl {
+  height: 50px;
+  width: 50px;
+  background-color: #ffd254;
+  border-radius: 50%;
+  box-shadow: 1px 7px 6px rgba(0, 0, 0, .5);
+  position: fixed;
+  right: 40px;
+  bottom: 20px;
+  transition: .4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #707070;
+}
+
+.circl:hover {
+  background-color: #ffc62a;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+  transform: translateY(10px);
+}
+
+@keyframes animback {
+  0% {
+    transform: translateY(0px);
+    /* background-position: 0 50px; */
+  }
+
+  40% {
+    transform: translateY(-50px);
+  }
+
+
+  100% {
+    transform: translateY(0px);
+    /* background-position: 0 100px; */
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .right {
+    background-image: url('../../assets/img/ico_koleksi.png');
+    width: 100%;
+    height: 40%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 80px 30px;
+  }
+}
+
+@media screen and (max-width: 763px) {
+  nav ul {
+    position: absolute;
+    z-index: 99999;
+    margin-top: 25px;
+    background-color: rgb(252, 252, 252);
+    left: -920px;
+    height: 100vh;
+    flex-direction: column;
+    transform: translateX(100px);
+    transition: 0.5s ease-in-out;
+    width: 100vw;
+  }
+
+  #intro {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav ul.active {
+    left: 0;
+    transform: translateX(0px);
+  }
+
+  nav ul.active li {
+    padding-top: 20px;
+  }
+
+  i#hambur {
+    transition: .5s ease-in-out;
+  }
+
+  i#hambur.active {
+    transform: rotate(180deg);
+
+  }
+
+  .right {
+    margin-top: 70px;
+    background-image: url('../../assets/img/ico_koleksi.png');
+    width: 100%;
+    height: 40%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 80px 30px;
+  }
+
+  .temp-tidur {
+    flex-direction: column;
+  }
+
+  .form-input {
+    flex-direction: column;
+  }
+
+}
